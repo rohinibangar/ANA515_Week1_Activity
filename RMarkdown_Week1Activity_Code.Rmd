@@ -2,9 +2,7 @@
 title: "Diamond sizes"
 author: "Rohini Bangar"
 date: "2024-01-20"
-output:
-  html_document:
-    df_print: paged
+output: word_document
 ---
 
 ``` {r, echo = FALSE}
