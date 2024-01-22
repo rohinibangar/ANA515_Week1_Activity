@@ -1,0 +1,53 @@
+---
+title: "Diamond sizes"
+author: "Rohini Bangar"
+date: "2024-01-20"
+output:
+  html_document:
+    df_print: paged
+---
+
+``` {r, echo = FALSE}
+
+```
+
+```{r setup, include = FALSE}
+
+library(ggplot2)
+library(dplyr)
+```
+
+``` {r Data, include=FALSE}
+diamonds<- as.data.frame(diamonds)
+head(diamonds, 3)
+
+```
+
+```{r, include = FALSE}
+
+small <- diamonds %>% 
+  filter(carat <= 2.2)
+```
+
+```{r, echo = FALSE}
+
+```
+
+We have data about `r nrow(diamonds)` diamonds. Only 
+`r nrow(diamonds) - nrow(small)` are larger than
+2.2 carats. The distribution of the remainder is shown
+below:
+
+``` {r, echo = FALSE}
+
+```
+
+```{r, echo = FALSE}
+small %>% 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+```
+
+```{r, echo = FALSE}
+
+```
